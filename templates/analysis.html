@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <script>
+    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+  </script>
+  <style></style>
+	<meta charset="utf-8">
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="static/css/opensans-font.css">
+	<link rel="stylesheet" type="text/css" href="static/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="static/css/style1.css"/>
+
+    <link rel="stylesheet" type="text/css" href="static/css/util.css">
+    <style type="text/css">
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+    	.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #4fab40;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.flip-card {
+  margin: 20px;
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  z-index: 2;
+}
+
+.flip-card-back {
+  background-color: #fff;
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+    </style>
+</head>
+<body>
+	<div class="page-content">
+		<div class="form-v1-content" style="">
+			<div class="wizard-form">
+		        <form class="form-register" action="#" method="post">
+		        	<div id="form-total" style="">
+		        		<!-- SECTION 1 -->
+			            <h2>
+			            	<p class="step-icon"><span>01</span></p>
+			            	<span class="step-text">Prediction</span>
+			            </h2>
+			            <section>
+			                <div class="wizard-header">
+									<h4 class="heading">RESULT</h4>
+                  {% if result_prediction==1 %}
+									    <h3> We are afraid to tell you, you have diabetes :(</h3>
+                      <p>Doctors treat diabetes with a few different medications. Some of these drugs are taken by mouth, while others are available as injections.
+
+                        Type 1 diabetes
+                        Insulin is the main treatment for type 1 diabetes. It replaces the hormone your body isn’t able to produce.
+                        
+                        There are four types of insulin that are most commonly used. They’re differentiated by how quickly they start to work, and how long their effects last:
+                        
+                        Rapid-acting insulin starts to work within 15 minutes and its effects last for 3 to 4 hours.
+                        Short-acting insulin starts to work within 30 minutes and lasts 6 to 8 hours.
+                        Intermediate-acting insulin starts to work within 1 to 2 hours and lasts 12 to 18 hours.
+                        Long-acting insulin starts to work a few hours after injection and lasts 24 hours or longer.
+                        Type 2 diabetes
+                        Diet and exercise can help some people manage type 2 diabetes. If lifestyle changes aren’t enough to lower your blood sugar, you’ll need to take medication.
+                        
+                        Gestational diabetes
+                        You’ll need to monitor your blood sugar level several times a day during pregnancy. If it’s high, dietary changes and exercise may or may not be enough to bring it down.
+
+                        According to the Mayo Clinic, about 10 to 20 percent of women with gestational diabetes will need insulin to lower their blood sugar. Insulin is safe for the growing baby.
+
+                        The bottom line
+                        The drug or combination of drugs that your doctor prescribes will depend on the type of diabetes you have — and its cause. Check out this list of the various medications that are available to treat diabetes.</p>
+                  {% elif result_prediction==0 %}
+                      <h3> Congratulations!! You do not have diabetes</h3>
+                      <p>A healthy lifestyle can help you thrive throughout your life. Making healthy choices isn't always easy, however. It can be hard to find the time and energy to exercise regularly or prepare healthy meals. However, your efforts will pay off in many ways, and for the rest of your life.
+
+                        Steps you can take:
+                        Be physically active for 30 minutes most days of the week. Break this up into three 10-minute sessions when pressed for time. Healthy movement may include walking, sports, dancing, yoga, running or other activities you enjoy.
+                        Eat a well-balanced, low-fat diet with lots of fruits, vegetables and whole grains. Choose a diet that's low in saturated fat and cholesterol, and moderate in sugar, salt and total fat.
+                        Avoid injury by wearing seatbelts and bike helmets, using smoke and carbon monoxide detectors in the home, and using street smarts when walking alone. If you own a gun, recognize the dangers of having a gun in your home. Use safety precautions at all times.
+                        Don't smoke, or quit if you do. Ask your health care provider for help. UCSF's Tobacco Education Center offers smoking cessation and relapse prevention classes as well as doctor consultations for smokers trying to quit.
+                        Drink in moderation if you drink alcohol. Never drink before or while driving, or when pregnant.
+                        Ask someone you trust for help if you think you might be addicted to drugs or alcohol.
+                        Help prevent sexually transmitted infections (STIs) and HIV/AIDS by using condoms every time you have sexual contact. Condoms aren't 100 percent foolproof, so discuss STI screening with your provider. Birth control methods other than condoms, such as pills and implants, won't protect you from STIs or HIV.
+                        Brush your teeth after meals with a soft or medium bristled toothbrush. Also brush after drinking and before going to bed. Use dental floss daily.
+                        Stay out of the sun, especially between 10 a.m. and 3 p.m. when the sun's harmful rays are strongest. You are not protected if it is cloudy or if you are in the water — harmful rays pass through both. Use a broad spectrum sunscreen that guards against both UVA and UVB rays, with a sun protection factor (SPF) of 15 or higher. Select sunglasses that block 99 to 100 percent of the sun's rays.</p>
+                  {% endif %}
+								</div>
+			            </section>
+						<!-- SECTION 2 -->
+			             <h2>
+			            	<p class="step-icon"><span>02</span></p>
+			            	<span class="step-text">Analysis of other Algorithms</span>
+
+			            </h2>
+			           <section>
+                       <table style="margin:20px;width:90%;height: 60% ">
+                          <tr>
+                            <th >Data Fed</th>
+                            <th>Input by user</th>
+                          </tr>
+
+                          <tr>
+                            <th>Pregnancy</th>
+                            <td>{{preg}}</td>
+                          </tr>
+                          <tr>
+                            <th>Glucose</th>
+                            <td>{{gluc}}</td>
+                          </tr>
+                          <tr>
+                            <th>Bloodpressure</th>
+                            <td>{{blood_pressure}}</td>
+                          </tr>
+                          <tr>
+                            <th>Skin Thickness</th>
+                            <td>{{skin_th}}</td>
+                          </tr>
+                          <tr>
+                            <th>Insulin</th>
+                            <td>{{insln}}</td>
+                          </tr>
+
+                          <tr>
+                          
+                            <th>BMI</th>
+                            <td>{{b_m_i}}</td>
+                          </tr>
+                          <tr>
+                            <th>Diabetes Pedigree Function</th>
+                            <TD>{{d_p_func}}</TD>
+                          </tr>
+                          <tr>
+                          
+                            <th>Age</th>
+                            <td>{{AGE}}</td>
+                          </tr>
+                        </table>
+                        <table style="margin:20px;width:90%;height: 60% ">
+                          <tr>
+                            <th>Algorithm</th>
+                            <th>Algorithm efficiency</th>
+                            <th>Diabetes Result for given input</th>
+                          </tr>
+
+                          <tr>
+                            <th>Random Forest</th>
+                            <td>99.5%</td>
+                            <td>
+                              {% if result_prediction==1 %}
+                                  <p>Positive</p>
+                              {% elif result_prediction==0 %}
+                                  <p>Negative</p>
+                              {% endif %}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <th>KNN</th>
+                            <td>96.8%</td>
+                            <td>
+                              {% if result_knn==1 %}
+                                  <p>Positive</p>
+                              {% elif result_knn==0 %}
+                                  <p>Negative</p>
+                              {% endif %}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <th>Decision Tree</th>
+                            <td>94.83%</td>
+                            <td>
+                              {% if result_dt==1 %}
+                                  <p>Positive</p>
+                              {% elif result_dt==0 %}
+                                  <p>Negative</p>
+                              {% endif %}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <th>Logistic Regression</th>
+                            <td>77.25%</td>
+                            <td>
+                              {% if result_lr==1 %}
+                                  <p>Positive</p>
+                              {% elif result_lr==0 %}
+                                  <p>Negative</p>
+                              {% endif %}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <th>SVM</th>
+                            <td>77.24%</td>
+                            <td>
+                              {% if result_svm==1 %}
+                                  <p>Positive</p>
+                              {% elif result_svm==0 %}
+                                  <p>Negative</p>
+                              {% endif %}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <th>LDA</th>
+                            <td>76.8%</td>
+                            <td>
+                              {% if result_lda==1 %}
+                                  <p>Positive</p>
+                              {% elif result_lda==0 %}
+                                  <p>Negative</p>
+                              {% endif %}
+                            </td>
+                          </tr>
+                          
+                        </table>
+			           </section>
+		        	</div>
+		        </form>
+			</div>
+		</div>
+	</div>
+	<script src="static/js/jquery-3.3.1.min.js"></script>
+	<script src="static/js/jquery.steps.js"></script>
+	<script src="static/js/main1.js"></script>
+
+
+</body>
+</html>

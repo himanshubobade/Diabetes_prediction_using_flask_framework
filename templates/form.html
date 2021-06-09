@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="static/css/opensans-font.css">
+	<link rel="stylesheet" type="text/css" href="static/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="static/css/style1.css"/>
+  
+    <link rel="stylesheet" type="text/css" href="static/css/util.css">
+    <style type="text/css">
+    	.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #4fab40;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+    </style>
+</head>
+<body>
+	<div class="page-content">
+		<div class="form-v1-content">
+			<div class="wizard-form">
+		        <form class="form-register" action="" method="post">
+		        	<div id="form-total">
+		        		<!-- SECTION 1 -->
+			            <h2>
+			            	<p class="step-icon"><span>01</span></p>
+			            	<span class="step-text">Pregnancy record</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Pregnancy</h3>
+									<p>Please enter your infomation and proceed to the next step so we can calculate the result.  </p>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<fieldset>
+					
+											<input type="text" class="form-control"  name="preg" placeholder="0,1,2,3" min="32" max="80" required>
+										</fieldset>
+									</div>
+									
+								</div>
+								
+							</div>
+			            </section>
+						<!-- SECTION 2 -->
+			             <h2>
+			            	<p class="step-icon"><span>02</span></p>
+			            	<span class="step-text">Glucose</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Glucose Levels</h3>
+									<p> Please enter your infomation and proceed to the next step so we can calculate the result.</p>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<fieldset>
+					
+											<input type="text" class="form-control"  name="gluc" placeholder="eg. 100"  min="24" max="60" required>
+										</fieldset>
+									</div>
+									
+								</div>
+								
+							</div>
+			            </section>
+			            <!-- SECTION 3 -->
+			            <h2>
+			            	<p class="step-icon"><span>03</span></p>
+			            	<span class="step-text">Blood Pressure</span>
+			            </h2>
+			            <section>
+			               <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Blood Pressure Levels</h3>
+									<p> Please enter your infomation and proceed to the next step so we can calculate the result.</p>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<fieldset>
+					
+											<input type="text" class="form-control"  name="blood_pressure" placeholder="eg. 70"  min="24" max="60" required>
+										</fieldset>
+									</div>
+									
+								</div>
+								
+							</div>
+			            </section>
+
+
+			            <!-- SECTION 4 -->
+			            <h2>
+			            	<p class="step-icon"><span>04</span></p>
+			            	<span class="step-text">Skin Thickness</span>
+			            </h2>
+			            <section>
+			               <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Skin Thickness</h3>
+									<p> Please enter your infomation and proceed to the next step so we can calculate the result.</p>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<fieldset>
+					
+											<input type="text" class="form-control"  name="skin_th" placeholder="eg. 25"  min="32" max="80" required>
+										</fieldset>
+									</div>
+									
+								</div>
+								
+							</div>
+			            </section>
+
+                        <!-- SECTION 5 -->
+			            <h2>
+			            	<p class="step-icon"><span>05</span></p>
+			            	<span class="step-text">Insulin</span>
+			            </h2>
+			            <section>
+			               <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Insulin Levels</h3>
+									<p> Please enter your infomation and proceed to the next step so we can calculate the result.</p>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<fieldset>
+					
+											<input type="text" class="form-control"  name="insln" placeholder="eg. 170"  min="32" max="80" required>
+										</fieldset>
+									</div>
+									
+								</div>
+							</div>
+			            </section>
+
+
+                        <!-- SECTION 6 -->
+			            <h2>
+			            	<p class="step-icon"><span>06</span></p>
+			            	<span class="step-text">BMI</span>
+			            </h2>
+			            <section>
+			               <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Body Mass Index</h3>
+									<p> Please enter your infomation and proceed to the next step so we can calculate the result.</p>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<fieldset>
+					
+											<input type="text" class="form-control"  name="b_m_i" placeholder="eg. 40"  min="32" max="80" required>
+										</fieldset>
+									</div>
+									
+								</div>
+							
+							
+							</div>
+			            </section>
+
+						<!-- SECTION 7 -->
+			            <h2>
+			            	<p class="step-icon"><span>07</span></p>
+			            	<span class="step-text">Diabetes Pedigree Function</span>
+			            </h2>
+			            <section>
+			               <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Diabetes Pedigree Function</h3>
+									<p> Please enter your infomation and proceed to the next step so we can calculate the result.</p>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<fieldset>
+					
+											<input type="text" class="form-control"  name="d_p_func" placeholder="eg. 0.15"  min="32" max="80" required>
+										</fieldset>
+									</div>
+									
+								</div>
+							
+							</div>
+			            </section>
+
+                        <!-- SECTION 8 -->
+			            <h2>
+			            	<p class="step-icon"><span>08</span></p>
+			            	<span class="step-text">Age</span>
+			            </h2>
+			            <section>
+			               <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Your Age</h3>
+									<p> Please enter your infomation and proceed to the next step so we can calculate the result.</p>
+								</div>
+								
+								<div class="form-row">
+									<div class="form-holder">
+										<fieldset>
+					
+											<input type="text" class="form-control"  name="AGE" placeholder="eg. 35"  min="24" max="60" required>
+										</fieldset>
+									</div>
+									
+								</div>
+							
+						<button class="button" style="vertical-align:middle" formaction="{{ url_for('analysis')}}"><span>Predict Diabetes </span></button>
+							</div>
+			            </section>
+
+
+		        	</div>
+		        </form>
+			</div>
+		</div>
+	</div>
+	<script src="static/js/jquery-3.3.1.min.js"></script>
+	<script src="static/js/jquery.steps.js"></script>
+	<script src="static/js/main1.js"></script>
+
+
+</body>
+</html>
